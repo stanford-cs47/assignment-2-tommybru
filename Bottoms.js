@@ -21,31 +21,41 @@ export default class Bottoms extends React.Component {
   render() {
     return (
       <View style={styles.bottoms}>
-        <Image
-          style= {{width: width * 0.1, height: 35}}
-          resizeMode = 'contain'
-          source = {Images.rewind}
-        />
-        <Image
-          style= {{width: width * 0.2, height: 35}}
-          resizeMode = 'contain'
-          source = {Images.nope}
-        />
-        <Image
-          style= {{width: width * 0.1, height: 35}}
-          resizeMode = 'contain'
-          source = {Images.boost}
-        />
-        <Image
-          style= {{width: width * 0.2, height: 35}}
-          resizeMode = 'contain'
-          source = {Images.like}
-        />
-        <Image
-          style= {{width: width * 0.1, height: 35}}
-          resizeMode = 'contain'
-          source = {Images.superLike}
-        />
+        <View style={styles.buttons1}>
+          <Image
+            style = {{width: '70%', height: '70%'}}
+            resizeMode = 'contain'
+            source = {Images.rewind}
+          />
+        </View>
+        <View style={styles.buttons2}>
+          <Image
+            style= {{width: '60%', height: '60%'}}
+            resizeMode = 'contain'
+            source = {Images.nope}
+          />
+        </View>
+        <View style={styles.buttons1}>
+          <Image
+            style= {{width: width * 0.1, height: 30}}
+            resizeMode = 'contain'
+            source = {Images.boost}
+          />
+        </View>
+        <View style={styles.buttons2}>
+          <Image
+            style= {{width: width * 0.2, height: 35}}
+            resizeMode = 'contain'
+            source = {Images.like}
+          />
+        </View>
+        <View style={styles.buttons1}>
+          <Image
+            style= {{width: width * 0.1, height: 30}}
+            resizeMode = 'contain'
+            source = {Images.superLike}
+          />
+        </View>
       </View>
     );
   }
@@ -53,9 +63,25 @@ export default class Bottoms extends React.Component {
 
 const styles = StyleSheet.create({
   bottoms: {
-    flex: 1,
+    width: width * 0.8,
     flexDirection: 'row',
-    alignItems: 'flex-end',
-    justifyContent: 'space-around',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  buttons1: {
+    width: width * 0.1,
+    height: width * 0.1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: width * 0.05,
+    backgroundColor: 'white',
+  },
+  buttons2: {
+    width: width * 0.15,
+    height: width * 0.15,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: width * 0.75,
+    backgroundColor: 'white',
   }
 });

@@ -16,9 +16,6 @@ import Bottoms from './Bottoms';
 
 var { height, width } = Dimensions.get('window');
 
-import { StyleSheet, Text, View } from 'react-native';
-import { Images, Profiles } from './App/Themes';
-
 export default class App extends React.Component {
   constructor() {
     super();
@@ -39,11 +36,6 @@ export default class App extends React.Component {
         <Profile/>
         <Bottoms/>
       </SafeAreaView>
-
-      <View style={styles.container}>
-        <Text>This is your workspace. Have fun!</Text>
-        <Text>(Hint: Peep the App folder)</Text>
-      </View>
     );
   }
 }
@@ -54,10 +46,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-
     backgroundColor: '#f3efef',
-  },
-});
-
   },
 });

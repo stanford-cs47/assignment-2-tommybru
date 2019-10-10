@@ -17,45 +17,66 @@ export default class Profile extends React.Component {
   constructor() {
     super();
 
-    var haroldProfile = Profiles.harold;
+    var curPofile = Profiles.random();
     this.state = {
-      profileImage: haroldProfile.image,
-      name: haroldProfile.name,
-      age: haroldProfile.age,
-      occupation: haroldProfile.occupation
+      profileImage: curPofile.image,
+      name: curPofile.name,
+      age: curPofile.age,
+      occupation: curPofile.occupation
     };
+
+
   }
 
   render() {
     return (
-      <View style={styles.profile}>
-        <Image
-          style= {{width: width * 0.2, height: 35}}
-          resizeMode = 'contain'
-          source = {{uri: 'https://icons-for-free.com/iconfiles/png/512/gear+preferences+settings+icon-1320166911584226160.png'}}
-        />
-        <Image
-          style = {{width: width * 0.5, height: 30}}
-          resizeMode = 'contain'
-          source = {Images.logo}
-        />
-        <Image
-          style= {{width: width * 0.2, height: 35}}
-          resizeMode = 'contain'
-          source = {{uri: 'https://i.dlpng.com/static/png/497750_preview.png'}}
-        />
+      <View style={styles.container}>
+        <View style={styles.profile}>
+          <View>
+            <Image source = {this.state.profileImage}/>
+          </View>
+          <View style={styles.textBox}>
+            <Text style={styles.profileText1}>
+              {this.state.name},
+              <Text
+                style={styles.profileText2}> {this.state.age}
+              </Text>
+            </Text>
+            <Text style={styles.profileText2}>
+              {this.state.occupation}
+            </Text>
+          </View>
+        </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: '#f3efef',
+  },
   profile: {
-    flex: 2,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'flex-start',
-    borderBottomWidth: 1,
-    borderBottomColor: 'grey',
+    borderColor: '#C5C5C5',
+    borderWidth: 1,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+  },
+  profileText1: {
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+  profileText2: {
+    fontWeight: 'normal',
+    fontSize: 30,
+  },
+  textBox: {
+    padding: 10,
+    backgroundColor: 'white',
+    justifyContent: 'flex-start',
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
   }
 });
