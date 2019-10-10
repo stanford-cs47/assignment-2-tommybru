@@ -36,13 +36,13 @@ export default class Profile extends React.Component {
             <Image source = {this.state.profileImage}/>
           </View>
           <View style={styles.textBox}>
-            <Text style={styles.profileText1}>
+            <Text style={{fontWeight: 'bold',fontSize: 30,}}>
               {this.state.name},
               <Text
-                style={styles.profileText2}> {this.state.age}
+                style={{fontWeight: 'normal',fontSize: 30,}}> {this.state.age}
               </Text>
             </Text>
-            <Text style={styles.profileText2}>
+            <Text style={{fontWeight: 'normal',fontSize: 24, color: '#C5C5C5'}}>
               {this.state.occupation}
             </Text>
           </View>
@@ -63,14 +63,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
-  },
-  profileText1: {
-    fontWeight: 'bold',
-    fontSize: 30,
-  },
-  profileText2: {
-    fontWeight: 'normal',
-    fontSize: 30,
   },
   textBox: {
     padding: 10,
